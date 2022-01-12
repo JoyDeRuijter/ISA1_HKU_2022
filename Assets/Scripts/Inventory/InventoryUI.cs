@@ -13,10 +13,10 @@ public class InventoryUI : MonoBehaviour
 
     #endregion
 
-    private void Awake()
+    private void Start()
     {
         inventory = Inventory.instance;
-        inventory.itemChangedCallback += UpdateUI;
+        inventory.onItemChangedCallback += UpdateUI;
         
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     #region Variables
-
+    
+    private Item item;
     public Image icon;
     public Button removeButton;
-    private Item item;
 
     #endregion
 
@@ -20,14 +20,8 @@ public class InventorySlot : MonoBehaviour
         removeButton.interactable = true;
     }
 
-    public void UseItem()
-    {
-        if (item != null)
-            item.Use();
-    }
-
     public void ClearSlot()
-    { 
+    {
         item = null;
         icon.sprite = null;
         icon.enabled = false;
@@ -37,5 +31,11 @@ public class InventorySlot : MonoBehaviour
     public void OnRemoveButton()
     {
         Inventory.instance.Remove(item);
+    }
+
+    public void UseItem()
+    {
+        if (item != null)
+            item.Use();
     }
 }

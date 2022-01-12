@@ -6,24 +6,26 @@ public class Interactable : MonoBehaviour
     #region Variables
 
     public float radius = 2f;
-    [HideInInspector] public bool isFocussed, hasInteracted;
+    [HideInInspector] public bool isInRange;
+    [HideInInspector] public bool hasInteracted = false;
     public Transform interactionTransform;
     private Transform player;
+    private PlayerManager playerManager;
 
     #endregion
 
-    private void Awake()
+    private void Start()
     {
-        isFocussed = false;
-        hasInteracted = false;
+        playerManager = PlayerManager.instance;
+        player = playerManager.player.GetComponent<Transform>();
     }
 
     private void Update()
     {
-        if (isFocussed && !hasInteracted)
+        if (!hasInteracted)
         {
             float distance = Vector3.Distance(player.position, interactionTransform.position);
-            if (distance <= radius)
+            if (distance <= radius && Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
                 hasInteracted = true;
@@ -33,21 +35,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        Debug.Log("Interacting with " + transform.name);
-    }
-
-    public void OnFocus(Transform playerTransform)
-    { 
-        isFocussed = true;
-        player = playerTransform;
-        hasInteracted = false;    
-    }
-
-    public void OnDefocus()
-    { 
-        isFocussed = false;
-        player = null;
-        hasInteracted = false;
+        // Debug.Log("Interacting with " + transform.name);
     }
 
     private void OnDrawGizmosSelected()

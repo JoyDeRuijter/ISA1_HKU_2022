@@ -23,11 +23,11 @@ public class Inventory : MonoBehaviour
 
     #region Variables
 
-    public int capacity = 15;
+    public int capacity = 20;
     public List<Item> items = new List<Item>(); 
 
-    public delegate void ItemChangedCallback();
-    public ItemChangedCallback itemChangedCallback;
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
 
     #endregion
 
@@ -43,8 +43,8 @@ public class Inventory : MonoBehaviour
 
             items.Add(item);
 
-            if (itemChangedCallback != null)
-                itemChangedCallback.Invoke();
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
         }
         return true;
     }
@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour
     { 
         items.Remove(item);
 
-        if (itemChangedCallback != null)
-            itemChangedCallback.Invoke();
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
     }
 }
