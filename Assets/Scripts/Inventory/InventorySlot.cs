@@ -9,8 +9,14 @@ public class InventorySlot : MonoBehaviour
     private Item item;
     public Image icon;
     public Button removeButton;
+    private ItemManager itemManager;
 
     #endregion
+
+    private void Start()
+    {
+        itemManager = ItemManager.instance;
+    }
 
     public void AddItem(Item newItem)
     {
@@ -30,6 +36,7 @@ public class InventorySlot : MonoBehaviour
 
     public void OnRemoveButton()
     {
+        itemManager.DropItem(item.name);
         Inventory.instance.Remove(item);
     }
 
