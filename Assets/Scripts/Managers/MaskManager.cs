@@ -75,7 +75,7 @@ public class MaskManager : MonoBehaviour
         currentMaskObject.transform.localPosition = Vector3.zero;
         currentMaskObject.transform.localRotation = Quaternion.identity;
         currentMaskObject.transform.localScale = new Vector3(100f, 100f, 100f);
-        currentMask.isEquipped = true;
+        newMask.isEquipped = true;
         currentMask = newMask;
         
 
