@@ -27,6 +27,16 @@ public class ItemManager : MonoBehaviour
     private void Start()
     {
         playerManager = PlayerManager.instance;
+
+        for (int i = 0; i < itemObjects.Count; i++)
+        {
+            itemObjects[i].GetComponent<ItemPickup>().item.isEquipped = false;
+        }
+
+        for (int i = 0; i < maskObjects.Count; i++)
+        {
+            maskObjects[i].GetComponent<ItemPickup>().item.isEquipped = false;
+        }
     }
 
     public void DropObject(string objectName, Item.ItemType itemType)
