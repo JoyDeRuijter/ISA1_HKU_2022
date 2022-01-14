@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-        if (!item.isDefaultItem)
+        if (!item.isDefaultMask)
         {
             if (items.Count >= capacity)
             {

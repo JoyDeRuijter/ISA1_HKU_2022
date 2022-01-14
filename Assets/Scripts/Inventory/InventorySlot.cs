@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     #region Variables
-    
+
     private Item item;
     public Image icon;
     public Button removeButton;
@@ -36,7 +36,7 @@ public class InventorySlot : MonoBehaviour
 
     public void OnRemoveButton()
     {
-        itemManager.DropItem(item.name);
+        itemManager.DropObject(item.name, item.itemType);
         Inventory.instance.Remove(item);
     }
 

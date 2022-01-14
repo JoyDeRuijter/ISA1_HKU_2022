@@ -20,6 +20,7 @@ public class ItemManager : MonoBehaviour
     private PlayerManager playerManager;
     private GameObject objectToDrop;
     public List<GameObject> itemObjects = new List<GameObject>();
+    public List<GameObject> maskObjects = new List<GameObject>();
 
     #endregion
 
@@ -28,21 +29,36 @@ public class ItemManager : MonoBehaviour
         playerManager = PlayerManager.instance;
     }
 
-    public void DropItem(string itemName)
+    public void DropObject(string objectName, Item.ItemType itemType)
     {
-        //Debug.Log("Should drop item now");
-
-        for (int i = 0; i < itemObjects.Count; i++)
+        if (itemType == Item.ItemType.Test)
         {
-            if (itemObjects[i].name == itemName)
+            for (int i = 0; i < itemObjects.Count; i++)
             {
-                objectToDrop = itemObjects[i];
-                break;
+                if (itemObjects[i].name == objectName)
+                {
+                    objectToDrop = itemObjects[i];
+                    break;
+                }
+            }
+        }
+        else if (itemType == Item.ItemType.Mask)
+        {
+            for (int i = 0; i < maskObjects.Count; i++)
+            {
+                if (maskObjects[i].name == objectName)
+                {
+                    objectToDrop = maskObjects[i];
+                    break;
+                }
             }
         }
 
         Vector3 dropPosition = new Vector3 (playerManager.player.transform.position.x, playerManager.player.transform.position.y + 1, playerManager.player.transform.position.z);
         GameObject droppedObject = Instantiate(objectToDrop, dropPosition, Quaternion.identity);
+        droppedObject.transform.localScale = Vector3.one;
+        droppedObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
+        droppedObject.GetComponentInChildren<MeshCollider>().isTrigger = false;
         droppedObject.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 250);
     }
 }

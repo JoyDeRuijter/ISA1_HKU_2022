@@ -13,6 +13,9 @@ public class ItemPickup : Interactable
     {
         base.Interact();
 
+        if (item.isEquipped)
+            return;
+
         PickUp();
     }
 
