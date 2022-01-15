@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 3877147327440296505}
   - component: {fileID: 3877147327440296510}
   m_Layer: 0
-  m_Name: Default Mask
+  m_Name: Gas Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

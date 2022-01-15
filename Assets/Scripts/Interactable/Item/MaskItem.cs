@@ -9,6 +9,7 @@ public class MaskItem : Item
     //[SerializeField] private GameObject hairObject;
     public bool intersectsWithHair;
     public Vector3 targetPosition;
+    public int disguise = 1;
 
     #endregion
 

@@ -161,4 +161,4 @@ MonoBehaviour:
   isInRange: 0
   hasInteracted: 0
   interactionTransform: {fileID: 5033701582870217064}
-  item: {fileID: 11400000, guid: 43a05bd1e7316ce42a6b555ba18c2596, type: 2}
+  item: {fileID: 11400000, guid: c133c227c1f28904d89f6bb3d5cd0bb2, type: 2}

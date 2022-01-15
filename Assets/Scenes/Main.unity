@@ -34727,7 +34727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdb199427fc1dd429dbcce217c6a5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMask: {fileID: 11400000, guid: 0ea4eb3a8e36967408e1d0d8b653752b, type: 2}
   currentMask: {fileID: 0}
   oldMask: {fileID: 0}
   hairObject: {fileID: 6097775151105135334}
@@ -35545,6 +35544,7 @@ GameObject:
   - component: {fileID: 1232801766}
   - component: {fileID: 1232801765}
   - component: {fileID: 1232801764}
+  - component: {fileID: 1232801769}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -35649,6 +35649,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1232801769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232801762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b774be942ceed479e2e5361968522d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 100
+  health:
+    baseValue: 100
+    maxValue: 100
+    minValue: 0
+  armor:
+    baseValue: 0
+    maxValue: 10
+    minValue: 0
+  money:
+    baseValue: 0
+    maxValue: 100000
+    minValue: 0
+  disguise:
+    baseValue: 0
+    maxValue: 5
+    minValue: 0
 --- !u!1001 &1233734892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55775,7 +55805,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3877147327440296504, guid: 88a5611cd22fcef459a5ade5c88bdbb5, type: 3}
       propertyPath: m_Name
-      value: Default Mask
+      value: Gas Mask
       objectReference: {fileID: 0}
     - target: {fileID: 3877147327440296505, guid: 88a5611cd22fcef459a5ade5c88bdbb5, type: 3}
       propertyPath: m_RootOrder

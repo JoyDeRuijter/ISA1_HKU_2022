@@ -15,19 +15,18 @@ public class MaskManager : MonoBehaviour
 
     #region Variables
 
-    public MaskItem defaultMask;
     [HideInInspector] public MaskItem currentMask;
     [HideInInspector] public MaskItem oldMask;
     [SerializeField] private GameObject hairObject;
 
-    Inventory inventory;
-
-    public delegate void OnMaskChanged(MaskItem newMask, MaskItem oldMask);
-    public OnMaskChanged onMaskChanged;
+    private Inventory inventory;
     private PlayerManager playerManager;
     private ItemManager itemManager;
     private GameObject player, currentMaskObject;
     private Transform playerHead;
+
+    public delegate void OnMaskChanged(MaskItem newMask);
+    public OnMaskChanged onMaskChanged;
 
     #endregion
 
@@ -38,24 +37,25 @@ public class MaskManager : MonoBehaviour
         player = playerManager.player;
         playerHead = player.transform.Find("RobberModel/Root/Hips/Spine_01/Spine_02/Spine_03/Neck/Head");
         itemManager = ItemManager.instance;
-        //Equip(defaultMask);
         currentMask = null;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
-        {
             Unequip();
-        }
     }
 
     public void Equip(MaskItem newMask)
     {
         if (currentMask != null)
         {
+            oldMask = currentMask;
             Unequip();
         }
+
+        if (onMaskChanged != null)
+            onMaskChanged.Invoke(newMask);
 
         if (newMask.intersectsWithHair)
             hairObject.SetActive(false);
@@ -77,7 +77,6 @@ public class MaskManager : MonoBehaviour
         currentMaskObject.transform.localScale = new Vector3(100f, 100f, 100f);
         newMask.isEquipped = true;
         currentMask = newMask;
-        
 
         Debug.Log("Has equiped " + currentMask.name);
     }
@@ -92,6 +91,10 @@ public class MaskManager : MonoBehaviour
             currentMask.isEquipped = false;
             oldMask = currentMask;
             inventory.Add(oldMask);
+
+            if (onMaskChanged != null)
+                onMaskChanged.Invoke(null);
+
             Destroy(currentMaskObject);
             currentMask = null;
         }

@@ -6,11 +6,10 @@ public class Item : ScriptableObject
 {
     #region Variables
 
-    public enum ItemType { Test, Mask }
+    public enum ItemType { Test, Mask, Valuable }
     public ItemType itemType;
 
     [HideInInspector] public bool isEquipped;
-    public bool isDefaultMask = false;
     new public string name = "Insert Item Name";
     public Sprite icon = null;
 

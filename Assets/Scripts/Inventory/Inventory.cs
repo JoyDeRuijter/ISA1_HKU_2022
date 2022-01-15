@@ -33,8 +33,6 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-        if (!item.isDefaultMask)
-        {
             if (items.Count >= capacity)
             {
                 Debug.Log("Inventory is full!");
@@ -45,7 +43,6 @@ public class Inventory : MonoBehaviour
 
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
-        }
         return true;
     }
 

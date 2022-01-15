@@ -22,4 +22,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
 
     #endregion
+
+    public void KillPlayer()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
