@@ -5,12 +5,16 @@ public class Interactable : MonoBehaviour
 {
     #region Variables
 
-    public float radius = 2f;
+    public float radius = 1.2f;
     [HideInInspector] public bool isInRange;
     [HideInInspector] public bool hasInteracted = false;
     public Transform interactionTransform;
     private Transform player;
     private PlayerManager playerManager;
+    private bool needsOutlineComponent;
+    [HideInInspector] public MeshOutliner meshOutliner;
+    [HideInInspector] public bool cancelOutline;
+    private float distance;
 
     #endregion
 
@@ -18,13 +22,23 @@ public class Interactable : MonoBehaviour
     {
         playerManager = PlayerManager.instance;
         player = playerManager.player.GetComponent<Transform>();
+
+        meshOutliner = GetComponentInChildren<MeshOutliner>();
+        if (meshOutliner == null && !needsOutlineComponent)
+        {
+            GetComponentInChildren<Transform>().gameObject.AddComponent<MeshOutliner>();
+            needsOutlineComponent = true;
+        }
     }
 
     private void Update()
     {
         if (!hasInteracted)
         {
-            float distance = Vector3.Distance(player.position, interactionTransform.position);
+            distance = Vector3.Distance(player.position, interactionTransform.position);
+
+            UpdateOutlines();
+
             if (distance <= radius && Input.GetKeyDown(KeyCode.E))
             {
                 Interact();
@@ -45,5 +59,15 @@ public class Interactable : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(interactionTransform.position, radius);
+    }
+
+    private void UpdateOutlines()
+    {
+        if (cancelOutline)
+            GetComponentInChildren<MeshOutliner>().enabled = false;
+        if (distance <= radius && !cancelOutline)
+            GetComponentInChildren<MeshOutliner>().enabled = true;
+        else if (distance > radius)
+            GetComponentInChildren<MeshOutliner>().enabled = false;
     }
 }

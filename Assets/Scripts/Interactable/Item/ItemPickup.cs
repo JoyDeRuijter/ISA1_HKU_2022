@@ -22,7 +22,7 @@ public class ItemPickup : Interactable
     private void PickUp()
     {
         bool wasPickedUp = Inventory.instance.Add(item);
-
+ 
         if (!wasPickedUp)
             return;
 

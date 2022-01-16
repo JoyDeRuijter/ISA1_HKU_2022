@@ -2636,7 +2636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d4cf4378d25cc449770b9e2bbb7fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   counter: {fileID: 0}
   value: 0
   statName: 
@@ -10339,10 +10338,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249996579}
     m_Modifications:
-    - target: {fileID: 4989286891728625808, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5033701583237897868, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10391,11 +10386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duffle Bag
       objectReference: {fileID: 0}
-    - target: {fileID: 7145395468794981310, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 910950212, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
+    - {fileID: 197642869, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
+    - {fileID: 2092824015, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
 --- !u!4 &360678440 stripped
 Transform:
@@ -46455,7 +46449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c761b42fc1e65148a6ea5da2e14c891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   counter: {fileID: 0}
   value: 0
   statName: 
@@ -53239,10 +53232,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249996579}
     m_Modifications:
-    - target: {fileID: 4989286891728625808, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5033701583237897868, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -53290,10 +53279,6 @@ PrefabInstance:
     - target: {fileID: 5033701583237897870, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
       propertyPath: m_Name
       value: Duffle Bag 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7145395468794981310, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
@@ -62074,10 +62059,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249996579}
     m_Modifications:
-    - target: {fileID: 4989286891728625808, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5033701583237897868, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -62126,9 +62107,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duffle Bag 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7145395468794981310, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 197642869, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
+    - {fileID: 910950212, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
+    - {fileID: 2092824015, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc5c3cf9bb1468944bf0493f04507e07, type: 3}

@@ -75,10 +75,9 @@ public class MaskManager : MonoBehaviour
         currentMaskObject.transform.localPosition = Vector3.zero;
         currentMaskObject.transform.localRotation = Quaternion.identity;
         currentMaskObject.transform.localScale = new Vector3(100f, 100f, 100f);
+        currentMaskObject.GetComponentInChildren<ItemPickup>().cancelOutline = true;
         newMask.isEquipped = true;
         currentMask = newMask;
-
-        Debug.Log("Has equiped " + currentMask.name);
     }
 
     public void Unequip()
@@ -95,6 +94,8 @@ public class MaskManager : MonoBehaviour
             if (onMaskChanged != null)
                 onMaskChanged.Invoke(null);
 
+            currentMaskObject.GetComponentInChildren<ItemPickup>().cancelOutline = false;
+  
             Destroy(currentMaskObject);
             currentMask = null;
         }
