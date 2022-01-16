@@ -5,16 +5,6 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
-    #region Singleton
-
-    public static PlayerStats instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-    #endregion
-
     #region Variables
 
     public Stat money;
@@ -22,11 +12,11 @@ public class PlayerStats : CharacterStats
 
     #endregion
 
-    private void Start()
+    private void Awake()
     {
         MaskManager.instance.onMaskChanged += OnMaskChanged;
-        money.SetStatValue(0);
-        disguise.SetStatValue(0);
+        money.SetStatValue(money.baseValue);
+        disguise.SetStatValue(disguise.baseValue);
     }
 
     void OnMaskChanged(MaskItem newMask)

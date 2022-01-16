@@ -16,6 +16,8 @@ public class CharacterStats : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        health.baseValue = maxHealth;
+        armor.currentValue = armor.baseValue;
         health.SetStatValue(currentHealth);
     }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106493466d3c1ee48a337979df92a57d, type: 3}
   m_Name: Duffle Bag
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 2
   isEquipped: 0
   name: Duffle Bag
   icon: {fileID: 21300000, guid: 37ee7b18fc3caa847bf1583ba15b9bb8, type: 3}

@@ -15,7 +15,7 @@ public class ValuableItem : Item
         base.Use();
 
         Debug.Log("Does what it's supposed to");
-        PlayerStats.instance.UpdateMoney(true, value);
+        PlayerManager.instance.player.GetComponent<PlayerStats>().UpdateMoney(true, value);
         RemoveFromInventory();
     }
 }

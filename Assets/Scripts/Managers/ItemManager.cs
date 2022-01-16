@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour
 
     private PlayerManager playerManager;
     private GameObject objectToDrop;
-    public List<GameObject> itemObjects = new List<GameObject>();
+    public List<GameObject> valuableObjects = new List<GameObject>();
     public List<GameObject> maskObjects = new List<GameObject>();
 
     #endregion
@@ -28,9 +28,9 @@ public class ItemManager : MonoBehaviour
     {
         playerManager = PlayerManager.instance;
 
-        for (int i = 0; i < itemObjects.Count; i++)
+        for (int i = 0; i < valuableObjects.Count; i++)
         {
-            itemObjects[i].GetComponent<ItemPickup>().item.isEquipped = false;
+            valuableObjects[i].GetComponent<ItemPickup>().item.isEquipped = false;
         }
 
         for (int i = 0; i < maskObjects.Count; i++)
@@ -41,13 +41,13 @@ public class ItemManager : MonoBehaviour
 
     public void DropObject(string objectName, Item.ItemType itemType)
     {
-        if (itemType == Item.ItemType.Test)
+        if (itemType == Item.ItemType.Valuable)
         {
-            for (int i = 0; i < itemObjects.Count; i++)
+            for (int i = 0; i < valuableObjects.Count; i++)
             {
-                if (itemObjects[i].name == objectName)
+                if (valuableObjects[i].name == objectName)
                 {
-                    objectToDrop = itemObjects[i];
+                    objectToDrop = valuableObjects[i];
                     break;
                 }
             }

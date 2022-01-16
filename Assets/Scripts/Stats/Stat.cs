@@ -8,10 +8,10 @@ public class Stat
 {
     #region Variables
 
-    [SerializeField] private int baseValue;
+    public int baseValue;
     [SerializeField] private int maxValue;
     [SerializeField] private int minValue;
-    public int currentValue { private set; get; }
+    public int currentValue;
 
     #endregion
 
