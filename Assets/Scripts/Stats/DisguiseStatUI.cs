@@ -7,6 +7,7 @@ public class DisguiseStatUI : StatsUI
     #region Variables
 
     private PlayerStats playerStats;
+
     #endregion
 
     private void Start()
