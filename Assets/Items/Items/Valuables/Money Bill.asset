@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 220812ddad46eb84aa1adbce19a9ec92, type: 3}
-  m_Name: Duffle Bag
+  m_Script: {fileID: 11500000, guid: 106493466d3c1ee48a337979df92a57d, type: 3}
+  m_Name: Money Bill
   m_EditorClassIdentifier: 
-  isDefaultItem: 0
-  name: Duffle Bag
-  icon: {fileID: 21300000, guid: 37ee7b18fc3caa847bf1583ba15b9bb8, type: 3}
+  itemType: 2
+  isEquipped: 0
+  name: Money Bill
+  icon: {fileID: 21300000, guid: 5825fc167c357874d94b1272bd4f9c92, type: 3}
+  value: 1

@@ -23,6 +23,8 @@ public class PlayerStats : CharacterStats
     {
         if (newMask != null)
             disguise.SetStatValue(newMask.disguise);
+        else
+            disguise.SetStatValue(disguise.baseValue);
     }
 
     public void UpdateMoney(bool shouldAdd, int value)
