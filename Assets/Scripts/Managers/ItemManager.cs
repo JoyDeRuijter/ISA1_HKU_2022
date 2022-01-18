@@ -66,9 +66,8 @@ public class ItemManager : MonoBehaviour
 
         Vector3 dropPosition = new Vector3 (playerManager.player.transform.position.x, playerManager.player.transform.position.y + 1, playerManager.player.transform.position.z);
         GameObject droppedObject = Instantiate(objectToDrop, dropPosition, Quaternion.identity);
-        droppedObject.transform.localScale = Vector3.one;
         droppedObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
         droppedObject.GetComponentInChildren<MeshCollider>().isTrigger = false;
-        droppedObject.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 250);
+        droppedObject.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 250); 
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6455844572955653962}
   - component: {fileID: 5269990279161015553}
+  - component: {fileID: 7410913278173325860}
   m_Layer: 0
   m_Name: Money Bill
   m_TagString: Untagged
@@ -51,13 +52,13 @@ MonoBehaviour:
   meshOutliner: {fileID: 0}
   cancelOutline: 0
   item: {fileID: 11400000, guid: f8cb802ee415c484ca9e10fb83387556, type: 2}
---- !u!54 &6379320436176846516
+--- !u!54 &7410913278173325860
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051848804288397511}
+  m_GameObject: {fileID: 3167260916230718282}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0

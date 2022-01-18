@@ -72,7 +72,7 @@ public class MaskManager : MonoBehaviour
         }
         
         currentMaskObject = Instantiate(currentMaskObject, newMask.targetPosition, Quaternion.identity, playerHead);
-        currentMaskObject.transform.localPosition = Vector3.zero;
+        currentMaskObject.transform.localPosition = newMask.targetPosition;
         currentMaskObject.transform.localRotation = Quaternion.identity;
         currentMaskObject.transform.localScale = new Vector3(100f, 100f, 100f);
         currentMaskObject.GetComponentInChildren<ItemPickup>().cancelOutline = true;

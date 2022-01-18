@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5033701582873067596}
   - component: {fileID: 5033701582872017432}
   - component: {fileID: 4989286891728625808}
-  - component: {fileID: 7145395468794981310}
   m_Layer: 0
   m_Name: DuffleBag_Graphic
   m_TagString: Untagged
@@ -97,22 +96,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43175207959209356, guid: a7765d47ecbaada46a9f7253aac000a2, type: 2}
---- !u!54 &7145395468794981310
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5033701582869910370}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5033701583237897870
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5033701583237897868}
   - component: {fileID: 5033701583237897871}
+  - component: {fileID: 4362988329629955191}
   m_Layer: 0
   m_Name: Duffle Bag
   m_TagString: Untagged
@@ -161,4 +145,22 @@ MonoBehaviour:
   isInRange: 0
   hasInteracted: 0
   interactionTransform: {fileID: 5033701582870217064}
+  meshOutliner: {fileID: 0}
+  cancelOutline: 0
   item: {fileID: 11400000, guid: c133c227c1f28904d89f6bb3d5cd0bb2, type: 2}
+--- !u!54 &4362988329629955191
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033701583237897870}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1329657532790749590}
   - component: {fileID: 1329657532791784674}
   - component: {fileID: 1329657532789594860}
-  - component: {fileID: 1329657532789594863}
   m_Layer: 0
   m_Name: SM_Item_Mask_Gas_01
   m_TagString: Untagged
@@ -97,22 +96,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f4bf4868cb0579d48b19800dece74cbe, type: 3}
---- !u!54 &1329657532789594863
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329657532789594862}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3877147327440296504
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3877147327440296505}
   - component: {fileID: 3877147327440296510}
+  - component: {fileID: 3934826636666433176}
   m_Layer: 0
   m_Name: Gas Mask
   m_TagString: Untagged
@@ -161,4 +145,22 @@ MonoBehaviour:
   isInRange: 0
   hasInteracted: 0
   interactionTransform: {fileID: 1329657532789960444}
+  meshOutliner: {fileID: 0}
+  cancelOutline: 0
   item: {fileID: 11400000, guid: 0ea4eb3a8e36967408e1d0d8b653752b, type: 2}
+--- !u!54 &3934826636666433176
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877147327440296504}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
