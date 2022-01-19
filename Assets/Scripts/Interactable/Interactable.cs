@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
     [HideInInspector] public bool isInRange;
     [HideInInspector] public bool hasInteracted = false;
     public Transform interactionTransform;
-    private Transform player;
+    [HideInInspector] public Transform player;
     private PlayerManager playerManager;
     private bool needsOutlineComponent;
     [HideInInspector] public MeshOutliner meshOutliner;
@@ -31,7 +31,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!hasInteracted)
         {
@@ -49,7 +49,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Interact()
     {
-        // Debug.Log("Interacting with " + transform.name);
+        Debug.Log("Interacting with " + transform.name);
     }
 
     private void OnDrawGizmosSelected()
