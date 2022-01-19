@@ -14,6 +14,7 @@ public class Interactable : MonoBehaviour
     private bool needsOutlineComponent;
     [HideInInspector] public MeshOutliner meshOutliner;
     [HideInInspector] public bool cancelOutline;
+    [HideInInspector] public Rigidbody playerRB;
     private float distance;
 
     #endregion
@@ -29,21 +30,20 @@ public class Interactable : MonoBehaviour
             GetComponentInChildren<Transform>().gameObject.AddComponent<MeshOutliner>();
             needsOutlineComponent = true;
         }
+
+        playerRB = player.gameObject.GetComponent<Rigidbody>();
     }
 
     protected virtual void Update()
     {
-        if (!hasInteracted)
+        distance = Vector3.Distance(player.position, interactionTransform.position);
+
+        UpdateOutlines();
+
+        if (distance <= radius && Input.GetKeyDown(KeyCode.E))
         {
-            distance = Vector3.Distance(player.position, interactionTransform.position);
-
-            UpdateOutlines();
-
-            if (distance <= radius && Input.GetKeyDown(KeyCode.E))
-            {
-                Interact();
-                hasInteracted = true;
-            }
+            Interact();
+            hasInteracted = true;
         }
     }
 

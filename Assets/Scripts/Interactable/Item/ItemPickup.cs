@@ -9,6 +9,12 @@ public class ItemPickup : Interactable
 
     #endregion
 
+    protected override void Update()
+    {
+        if (!hasInteracted)
+            base.Update();
+    }
+
     public override void Interact()
     {
         base.Interact();
