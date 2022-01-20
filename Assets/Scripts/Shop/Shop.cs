@@ -26,6 +26,8 @@ public class Shop : MonoBehaviour
     public int capacity = 10;
     public List<Item> items = new List<Item>();
 
+    public ParticleSystem moneyParticle;
+
     public delegate void OnShopChanged();
     public OnShopChanged onShopChangedCallback;
 
@@ -61,6 +63,7 @@ public class Shop : MonoBehaviour
     {
         inventory.Add(item);
         items.Remove(item);
+        moneyParticle.Play();
 
         if (onShopChangedCallback != null)
             onShopChangedCallback.Invoke();
