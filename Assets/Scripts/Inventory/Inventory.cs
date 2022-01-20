@@ -33,16 +33,17 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-            if (items.Count >= capacity)
-            {
-                Debug.Log("Inventory is full!");
-                return false;
-            }
+        if (items.Count >= capacity)
+        {
+            Debug.Log("Inventory is full!");
+            return false;
+        }
 
-            items.Add(item);
+        items.Add(item);
 
-            if (onItemChangedCallback != null)
-                onItemChangedCallback.Invoke();
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
+
         return true;
     }
 

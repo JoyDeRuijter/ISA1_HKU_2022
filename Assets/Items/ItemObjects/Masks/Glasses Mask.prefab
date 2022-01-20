@@ -49,8 +49,10 @@ MonoBehaviour:
   isInRange: 0
   hasInteracted: 0
   interactionTransform: {fileID: 7946801976740194391}
+  player: {fileID: 0}
   meshOutliner: {fileID: 0}
   cancelOutline: 0
+  playerRB: {fileID: 0}
   item: {fileID: 11400000, guid: a23e4ac9d310b064eb264bcae4c63c22, type: 2}
 --- !u!54 &3592792850130568819
 Rigidbody:
@@ -79,6 +81,7 @@ GameObject:
   - component: {fileID: 7075644377126085797}
   - component: {fileID: 7075644377126898875}
   - component: {fileID: 7075644377128051587}
+  - component: {fileID: 5976919510094362589}
   m_Layer: 0
   m_Name: SM_Item_Mask_Glasses_01
   m_TagString: Untagged
@@ -149,3 +152,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5976919510094362589
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075644377125841503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2f204e0ca65943049bd6ade4ab6da632, type: 3}
