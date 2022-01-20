@@ -72,10 +72,13 @@ public class MaskManager : MonoBehaviour
         }
         
         currentMaskObject = Instantiate(currentMaskObject, newMask.targetPosition, Quaternion.identity, playerHead);
+        currentMaskObject.GetComponentInChildren<MeshCollider>().isTrigger = true;
         currentMaskObject.transform.localPosition = newMask.targetPosition;
         currentMaskObject.transform.localRotation = Quaternion.identity;
         currentMaskObject.transform.localScale = new Vector3(100f, 100f, 100f);
         currentMaskObject.GetComponentInChildren<ItemPickup>().cancelOutline = true;
+        currentMaskObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
         newMask.isEquipped = true;
         currentMask = newMask;
     }

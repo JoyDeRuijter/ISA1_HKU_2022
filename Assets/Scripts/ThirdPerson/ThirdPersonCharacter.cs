@@ -1,3 +1,4 @@
+//From assetpack Unity Standard Assets
 using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson

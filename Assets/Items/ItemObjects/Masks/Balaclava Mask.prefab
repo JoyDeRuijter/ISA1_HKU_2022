@@ -90,7 +90,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110527624071277165}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -145,8 +145,10 @@ MonoBehaviour:
   isInRange: 0
   hasInteracted: 0
   interactionTransform: {fileID: 1110527624070966621}
+  player: {fileID: 0}
   meshOutliner: {fileID: 0}
   cancelOutline: 0
+  playerRB: {fileID: 0}
   item: {fileID: 11400000, guid: 76577b3629e94ae499ca7699d2f804f0, type: 2}
 --- !u!54 &4539789293523033788
 Rigidbody:

@@ -68,6 +68,7 @@ public class ItemManager : MonoBehaviour
         GameObject droppedObject = Instantiate(objectToDrop, dropPosition, Quaternion.identity);
         droppedObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
         droppedObject.GetComponentInChildren<MeshCollider>().isTrigger = false;
-        droppedObject.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 250); 
+        droppedObject.GetComponentInChildren<Rigidbody>().AddForce(Vector3.forward * 250);
+        droppedObject.GetComponentInChildren<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 }
