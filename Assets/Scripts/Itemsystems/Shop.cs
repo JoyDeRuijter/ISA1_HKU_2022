@@ -72,13 +72,9 @@ public class Shop : ItemSystem
 
             if (onShopChangedCallback != null)
                 onShopChangedCallback.Invoke();
-            
         }
         else
-        {
             StartCoroutine(ShowPopup(1f));
-            Debug.Log("Not enough money to buy this mask");
-        }
     }
 
     private IEnumerator ShowPopup(float showTime)
