@@ -1,13 +1,10 @@
 // Written by Joy de Ruijter
-using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : ItemSystemSlot
 {
     #region Variables
 
-    private Item item;
-    public Image icon;
     public Button removeButton;
     private ItemManager itemManager;
 
@@ -18,20 +15,16 @@ public class InventorySlot : MonoBehaviour
         itemManager = ItemManager.instance;
     }
 
-    public void AddItem(Item newItem)
+    public override void AddItem(Item newItem)
     {
-        item = newItem;
-        icon.sprite = item.icon;
-        icon.enabled = true;
+        base.AddItem(newItem);
         removeButton.interactable = true;
     }
 
-    public void ClearSlot()
+    public override void ClearSlot()
     {
-        removeButton.interactable = false;
-        item = null;
-        icon.sprite = null;
-        icon.enabled = false;     
+        base.ClearSlot();
+        removeButton.interactable = false;    
     }
 
     public void OnRemoveButton()

@@ -1,9 +1,8 @@
 // Written by Joy de Ruijter
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : ItemSystem
 {
     #region Singleton
 
@@ -23,15 +22,20 @@ public class Inventory : MonoBehaviour
 
     #region Variables
 
-    public int capacity = 20;
-    public List<Item> items = new List<Item>(); 
-
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
     #endregion
 
-    public bool Add(Item item)
+    private void Start()
+    {
+        capacity = 20;
+
+        if (items != null)
+            onItemChangedCallback.Invoke();
+    }
+
+    public override bool Add(Item item)
     {
         if (items.Count >= capacity)
         {
@@ -47,9 +51,9 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void Remove(Item item)
+    public override void Remove(Item item)
     { 
-        items.Remove(item);
+        base.Remove(item);
 
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();

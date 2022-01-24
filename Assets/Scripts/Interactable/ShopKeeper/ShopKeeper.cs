@@ -39,5 +39,4 @@ public class ShopKeeper : Interactable
             playerRB.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         }
     }
-
 }

@@ -1,14 +1,11 @@
 // Written by Joy de Ruijter
 using UnityEngine;
 
-public class ShopUI : MonoBehaviour
+public class ShopUI : ItemSystemUI
 {
     #region Variables
 
-    Shop shop;
-    public Transform itemsParent;
-    public GameObject shopUI;
-
+    private Shop shop;
     private ShopSlot[] slots;
 
     #endregion
@@ -21,7 +18,7 @@ public class ShopUI : MonoBehaviour
         slots = itemsParent.GetComponentsInChildren<ShopSlot>();
     }
 
-    private void UpdateUI()
+    public override void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {

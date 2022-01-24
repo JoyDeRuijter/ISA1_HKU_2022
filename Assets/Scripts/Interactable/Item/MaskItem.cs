@@ -10,6 +10,7 @@ public class MaskItem : Item
     public bool intersectsWithHair;
     public Vector3 targetPosition;
     public int disguise = 1;
+    public int shopPrice = 100;
 
     #endregion
 

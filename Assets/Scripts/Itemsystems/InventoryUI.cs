@@ -1,14 +1,11 @@
 // Written by Joy de Ruijter
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : ItemSystemUI
 {
     #region Variables
     
-    Inventory inventory;
-    public Transform itemsParent;
-    public GameObject inventoryUI;
-
+    private Inventory inventory;
     private InventorySlot[] slots;
 
     #endregion
@@ -24,10 +21,10 @@ public class InventoryUI : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("Inventory"))
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            shopUI.SetActive(!shopUI.activeSelf);
     }
 
-    private void UpdateUI()
+    public override void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {
